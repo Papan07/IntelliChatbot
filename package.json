@@ -1,0 +1,29 @@
+{
+  "name": "intellichatbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chatbot.js",
+  "type": "module",
+  "scripts": {
+    "start": "node chatbot.js",
+    "dev": "node chatbot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Papan07/IntelliChatbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Papan07/IntelliChatbot/issues"
+  },
+  "homepage": "https://github.com/Papan07/IntelliChatbot#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "uuid": "^11.1.0"
+  }
+}
