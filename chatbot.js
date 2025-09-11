@@ -167,7 +167,8 @@ app.post('/chat', async (req, res) => {
       historyLength: session.history.length
     });
   } catch (error) {
-    console.error('Gemini API Error:', error);
+    console.error('Gemini API Error:', error.message);
+    console.error('Full error:', error);
     res.status(500).json({ error: 'Failed to get response from IntelliBazar AI assistant.' });
   }
 });
