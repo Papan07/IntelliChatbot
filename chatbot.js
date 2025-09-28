@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import dotenv from 'dotenv';
 import { v4 as uuidv4 } from 'uuid';
+import fs from 'fs';
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -106,6 +107,7 @@ app.get('/chat-history/:userId', (req, res) => {
 });
 
 app.post('/chat', async (req, res) => {
+  console.log('Received request at /chat');
   const { message: userMessage = 'Hello', userId } = req.body;
 
   if (!userId) {
@@ -141,7 +143,8 @@ app.post('/chat', async (req, res) => {
   ];
 
   try {
-    const model = ai.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    console.log('Attempting to get generative model');
+    const model = ai.getGenerativeModel({ model: 'gemini-2.5-flash' });
     const result = await model.generateContent({
       contents
     });
